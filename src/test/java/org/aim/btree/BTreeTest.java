@@ -20,12 +20,13 @@ class BTreeTest {
                 return Long.compare(((User) user1).getUserId(), ((User) user2).getUserId());
             }
         });
-        for(int i = 0; i < 10 ; i++) {
+        for(int i = 0; i < 50 ; i++) {
             bTree.add(ConstructUser());
         }
         System.out.println(bTree);
         User user = bTree.search(new User().setUserId(1L));
         System.out.println(user);
+        bTree.remove(new User().setUserId(25L));
     }
 
     private User ConstructUser() {
